@@ -1,0 +1,340 @@
+/* обычно ставят backdrop, но может быть и overlay */
+.backdrop {
+  /* серый фон фиксируется на страницу */
+  position: fixed;
+  top: 0;
+  /* bottom: 0; */
+  /* right: 0; */
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+  overflow-y: scroll;
+  transition: opacity 250ms $timimg-function;
+
+  @media screen and (max-width: 767px) {
+    padding: 93px 15px;
+  }
+}
+
+/* .backdrop--hidden если БЭМ */
+.backdrop.is-hidden {
+  opacity: 0;
+  /* события указателя-
+  для того, чтобы backdrop пропускал через себя клики */
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.modal {
+  position: absolute;
+
+  left: 50%;
+  width: 90%;
+
+  transform: translate(-50%, -50%);
+
+  padding: 40px;
+
+  background-color: $white;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms $timimg-function;
+
+  @media screen and (max-width: 767px) {
+    top: 60%;
+    max-width: 450px;
+    // height: 609px;
+  }
+
+  @media screen and (min-width: 768px) {
+    top: 50%;
+    width: 528px;
+    // height: 581px;
+  }
+}
+
+.modal-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  /* text-align: center; */
+
+  color: $secondary-color-text;
+}
+
+/* .form-item input {
+  width: 100%;
+  margin-bottom: 28px;
+  padding: 12px 16px 12px 42px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+} */
+
+/* стилизирую placeholder --------------------------- */
+/* стилизируется только текс, геометрию тут нельзя задавать */
+/* .form-item input::placeholder,
+.form-textarea textarea::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  color: var(--primary-color-text);
+} */
+/* --------------------------------------------------- */
+
+/* .form-textarea textarea {
+  width: 100%;
+  height: 120px;
+  padding: 12px 16px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+} */
+
+/* стилизация по типу */
+/* очень тяжело стилизируется и в разных браузерах по разному будет выводится
+для того чтобы все было гуд, надо делать кастомные чекбоксы */
+/* .style-checkbox input[type="checkbox"] {
+} */
+
+/* метку позиционируем поверх инпута */
+/* .form-item,
+.form-textarea {
+  position: relative;
+} */
+
+.form-field {
+  position: relative;
+  display: block;
+
+  margin-bottom: 28px;
+}
+
+.form-input {
+  width: 100%;
+  height: 40px;
+  padding: 12px 16px 12px 42px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.form-label {
+  position: absolute;
+  top: 50%;
+  left: 42px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14px;
+  letter-spacing: 0.01em;
+
+  color: $primary-color-text;
+  transform: translateY(-50%);
+  transition: transform 250ms $timimg-function, color 250ms $timimg-function;
+}
+
+/* селектор соседа */
+/* + выбирает ближайшего соседа */
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+  /* выбрать фор-лейбел, который идет сразу после форм-инпута,
+  когда у того не показат плайсхолдер */
+  transform: translate(-30px, -30px);
+  color: $accent-color;
+}
+
+/* после заполнения формы ее граница меняет цвет и фиксирует его */
+.form-input:not(:placeholder-shown),
+.form-field:focus-within > .form-field {
+  border-color: $accent-color;
+}
+
+.form-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+
+  fill: $secondary-color-text;
+
+  transition: 250ms $timimg-function;
+}
+
+.form-input:focus ~ .form-icon {
+  fill: $accent-color;
+}
+
+/* после заполнения формы, иконка меняет цвет и фиксирует его */
+.form-input:not(:placeholder-shown) ~ .form-icon,
+.form-field:focus-within > .form-icon {
+  fill: $accent-color;
+}
+
+.form-field textarea {
+  display: flex;
+  width: 100%;
+  height: 120px;
+  padding: 12px 16px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.form-type {
+  margin-bottom: 20px;
+}
+
+.form-label-textarea {
+  position: absolute;
+  top: 15%;
+  left: 16px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14px;
+  letter-spacing: 0.01em;
+
+  color: $primary-color-text;
+  transition: transform 250ms $timimg-function,
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-type:focus ~ .form-label-textarea,
+.form-type:not(:placeholder-shown) ~ .form-label-textarea {
+  color: $accent-color;
+  transform: translateY(-30px);
+}
+
+/* checkbox ---------------------------------------- */
+.style-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  color: $primary-color-text;
+
+  @media screen and (min-width: $desktop) {
+    font-size: 14px;
+    line-height: 1.71;
+  }
+}
+
+/* .checkbox-label {
+  display: flex;
+  align-items: center;
+} */
+
+/* скрываю оригинальный checkbox */
+/* appearance: none; работает не во всех браузерах */
+/* appearance - на будущее... */
+.checkbox {
+  /* -webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+
+position: absolute; */
+
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.checkbox-icon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-right: 8px;
+
+  border: 2px solid $secondary-color-text;
+  border-radius: 4px;
+}
+
+.checkbox:checked + .checkbox-icon {
+  border-color: $accent-color;
+  background-color: $accent-color;
+  background-image: url(../images/check.svg);
+  background-size: contain;
+  background-origin: border-box;
+}
+
+.checkbox-policy {
+  color: $accent-color;
+  text-decoration: underline;
+}
+/* -------------------------------------------------- */
+
+/* закрытие модального окна */
+.btn-modal-close {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -15px;
+  left: 97%;
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background: $white;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 500ms $timimg-function;
+
+  &:hover {
+    background-color: #dcdcdc;
+  }
+}
+
+.btn-modal-close-icon {
+  fill: $secondary-color-text;
+  transition: 250ms $timimg-function;
+}
+
+.btn-modal-close:hover .btn-modal-close-icon {
+  fill: $accent-color;
+  transform: rotate(360deg);
+}
+
+.btn.btn-send {
+  display: flex;
+  margin: 0 auto;
+  padding: 10px 55px;
+  border: none;
+  transition: background-color 250ms $timimg-function,
+    color 250ms $timimg-function;
+}
+
+.btn-send:hover,
+.btn-send:focus {
+  background-color: rgb(51, 82, 122);
+  color: #2f303a;
+}

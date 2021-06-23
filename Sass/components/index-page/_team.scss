@@ -1,0 +1,168 @@
+.section-command {
+  padding: 60px 0;
+  background-color: #f5f4fa;
+
+  @media screen and (min-width: $desktop) {
+    padding: 94px 0;
+  }
+}
+
+.command-list {
+  @media screen and (max-width: 767px) {
+    & .item:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: 1199px) {
+    display: flex;
+    flex-wrap: wrap;
+
+    & .item {
+      width: calc((100% - 30px) / 2);
+      margin-right: 30px;
+    }
+
+    // у каждого второго маржин 0
+    & .item:nth-child(2n) {
+      margin-right: 0;
+    }
+
+    // у всех маржин 30пк, кроме каждого второго
+    // & .item:not(:nth-child(2n)) {
+    //   margin-right: 30px;
+    // }
+
+    // у всех маржин 30пк, кроме последних двух
+    & .item:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+
+    & .item + .item {
+      margin-left: 30px;
+    }
+  }
+}
+
+// .command-list .item + .item {
+//   margin-left: 30px;
+// }
+
+/* из-за background на углах видно белый фон!!! */
+.command-list .item {
+  /* display: block; */
+  background-color: $white;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px 4px 4px 4px;
+  overflow: hidden;
+}
+
+.command-list .name,
+.command-list .position {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.command-foto {
+  margin-bottom: 30px;
+}
+
+.command-list .name {
+  margin: 0 0 10px;
+}
+
+.command-list .position {
+  margin-bottom: 16px;
+
+  color: $primary-color-text;
+  font-weight: 400;
+}
+
+.social-network {
+  display: flex;
+  justify-content: center;
+  padding: 0 32px 24px;
+}
+
+.social-network-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+/* в спарйте, если есть width и height, то надо их удалить */
+.social-network .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  fill: $social-network-icon;
+  transition: background-color 250ms $timimg-function,
+    fill 250ms $timimg-function;
+
+  &:hover,
+  &:focus {
+    fill: $white;
+    background-color: $accent-color;
+  }
+}
+
+/* поворот фото на 180градусов --------------------- */
+.card {
+  // width: 270px;
+  // height: 260px;
+  // position: relative;
+  // perspective: 1000px;
+  // margin-bottom: 30px;
+
+  /* border: 1px solid rgb(126, 45, 45); */
+}
+.front,
+.back {
+  /* position: absolute; */
+  /* width: 270px; */
+  /* height: 260px; */
+  /* left: 0; */
+  /* top: 0; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+
+  // transition: 1s;
+  // backface-visibility: hidden;
+  // background-color: $white;
+}
+/* .front img {
+  max-width: 100%;
+  min-width: 100%;
+  height: auto;
+} */
+
+.back {
+  // position: absolute;
+  /* width: 270px; */
+  /* height: 260px; */
+  // left: 50%;
+  // top: 50%;
+  /* display: block;
+  justify-content: center;
+  align-items: center; */
+}
+
+// .back {
+//   transform: rotateY(180deg);
+// }
+// .card:hover .front {
+//   transform: rotateY(180deg);
+// }
+// .card:hover .back {
+//   transform: rotateY(360deg);
+// }

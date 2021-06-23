@@ -1,0 +1,30 @@
+// --primary-color-text: #757575;
+// --secondary-color-text: #212121;
+// --white: #ffffff;
+// --accent-color: #2196f3;
+// --border: #eeeeee;
+// --social-network-icon: #afb1b8;
+// --timimg-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+$accent-color: #2196f3;
+
+$secondary-color-text: #212121;
+
+$primary-color-text: #757575;
+
+$white: #ffffff;
+
+$border: #eeeeee;
+
+$social-network-icon: #afb1b8;
+
+$timimg-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+$transition-value: 250ms $timimg-function;
+
+$font-family: Roboto, sans-serif;
+
+// можно задать переменные на точки пелома: 
+$mobile: 480px; 
+$tablet: 768px;
+$desktop: 1200px; 

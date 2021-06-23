@@ -1,0 +1,104 @@
+.section-clients {
+  padding: 60px 0;
+
+  @media screen and (min-width: $desktop) {
+    padding: 94px 0;
+  }
+}
+
+.clients {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 767px) {
+    & .item {
+      width: calc((100% - 30px) / 2);
+      margin-right: 30px;
+    }
+    // у каждого второго маржин 0
+    & .item:nth-child(2n) {
+      margin-right: 0;
+    }
+
+    // у всех маржин 30пк, кроме каждого второго
+    // & .item:not(:nth-child(2n)) {
+    //   margin-right: 30px;
+    // }
+
+    // у всех маржин 30пк, кроме последних двух
+    & .item:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: 1199px) {
+    & .item {
+      width: calc((100% - 60px) / 3);
+      margin-right: 30px;
+    }
+    // у каждого третьего маржин 0
+    & .item:nth-child(3n) {
+      margin-right: 0;
+    }
+
+    // у всех маржин 30пк, кроме последних трех
+    & .item:not(:nth-last-child(-n + 3)) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    flex-wrap: nowrap;
+    // margin: 0;
+    // padding-left: 0;
+    & .item {
+      width: calc((100% - 150px) / 6);
+      // margin-right: 30px;
+      // если вклюяить маржин-райт, то нужно будет убрать
+      // маржин-райт у последнего элемента
+    }
+
+    & .item + .item {
+      margin-left: 30px;
+    }
+  }
+}
+
+/* если оставить border: 1px solid #afb1b8, то цвет рамки при
+ховере не будет менятся! */
+.clients .link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  // width: 170px;
+  width: 100%;
+  height: 90px;
+  // сделал фиксорованную выстоту, ширина сама подбирается
+  // в зависимости от ширины экрана
+
+  fill: $social-network-icon;
+  color: $social-network-icon;
+  border: 1px solid;
+  border-radius: 4px;
+  transition: color 250ms $timimg-function, fill 250ms $timimg-function,
+    transform 250ms $timimg-function;
+}
+
+.clients a:hover,
+.clients a:focus {
+  color: $accent-color;
+  fill: $accent-color;
+  transform: scale(1.1);
+}
+
+/* пример */
+/* .clients-item-link:hover,
+.clients-item-link:focus {
+  border-color: var(--active-color);
+  transform: scale(1.1);
+}
+.clients-item-link:hover .clients-logo,
+.clients-item-link:focus .clients-logo {
+  fill: var(--active-color);
+} */

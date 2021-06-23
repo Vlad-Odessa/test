@@ -1,0 +1,122 @@
+.section-feature {
+  padding: 60px 0;
+
+  @media screen and (min-width: $desktop) {
+    padding: 94px 0;
+  }
+}
+
+.feature-list {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: 1199px) {
+    flex-wrap: wrap;
+  }
+}
+
+.feature-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  // width: 100%;
+  border-radius: 4px;
+  background-color: #f5f4fa;
+  margin-bottom: 30px;
+}
+
+/* ======================================================= */
+/* .feature-list .item::before {
+  content: "";
+  display: block;
+  height: 120px;
+  border-radius: 4px;
+  background-color: #f5f4fa;
+  background-size: 70px;
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+
+/* можно просто задать доп класс каждой ЛИ и к этому классу поставить background-image: url() */
+/* например: icon-...::before{} */
+/* .feature-list .item:nth-child(1)::before {
+  background-image: url(../images/antenna.svg);
+} */
+
+/* .feature-list .item:nth-child(2)::before {
+  background-image: url(../images/clock.svg);
+} */
+
+/* .feature-list .item:nth-child(3)::before {
+  background-image: url(../images/diagram.svg);
+} */
+
+/* .feature-list .item:nth-child(4)::before {
+  background-image: url(../images/astronaut.svg);
+} */
+/* ============================================================ */
+
+.feature-list .title {
+  margin: 0;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+}
+
+/* нижний маржин в 30пкс должен быть от верхнего элемента!!! */
+.feature-list .title {
+  margin-bottom: 10px;
+}
+
+.feature-list .item {
+  width: 100%;
+
+  @media screen and (min-width: $tablet) and (max-width: 1199px) {
+    width: 354px;
+
+    // у всех маржин 30пк, кроме каждого второго
+    &:not(:nth-child(2n)) {
+      margin-right: 30px;
+    }
+
+    // маржин у всех, кроме двух последних
+    &:not(:nth-last-child(-n + 2)) {
+    margin-bottom: 30px;
+  }
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 270px;
+  }
+}
+
+/* очистка крайней геометрии.............. */
+/* .feature-list .item + .item {
+  margin-left: 30px;
+} */
+.feature-list .item:not(:last-child) {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 30px;
+  }
+}
+/* ....................................... */
+
+.feature-list .text {
+  color: $primary-color-text;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+}

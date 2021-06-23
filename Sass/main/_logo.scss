@@ -1,0 +1,26 @@
+.logo {
+  font-family: Raleway, sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  color: #000000;
+  transition: color 250ms $timimg-function;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+
+  &-style {
+    color: $accent-color;
+  }
+
+  @media screen and (max-width: 1199px) {
+    font-size: 24px;
+    line-height: 1.17;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 26px;
+    line-height: 1.19;
+  }
+}

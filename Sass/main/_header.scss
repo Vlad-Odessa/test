@@ -1,0 +1,329 @@
+/* навигация сайта --------------------------------*/
+
+/* .site-nav .link {
+  background-color: tomato;
+} */
+
+/* .main {
+  display: flex;
+  align-items: center;
+} */
+
+/* .main-nav {
+  display: flex;
+} */
+
+// спозиционировал mobile-menu
+.main {
+  position: relative;
+
+  @media screen and (max-width: 767px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.main,
+.site-nav {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.auth-nav {
+  @media screen and (max-width: 767px) {
+    display: inline-block;
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.site-nav {
+  @media screen and (min-width: $tablet) {
+    margin-left: 81px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-left: 86px;
+  }
+}
+
+/* левый маржин у всех, кроме первого элемента */
+// .site-nav .item + .item {
+//   @media screen and (min-width: $tablet) {
+//     margin-left: 50px;
+//   }
+// }
+
+// может как-то можно тут site-nav по другому оформить???
+.site-nav {
+  // мобильное меню
+  @media screen and (max-width: 767px) {
+    & .item:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    & {
+      margin-bottom: 60px;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    & .item + .item {
+      margin-left: 50px;
+    }
+  }
+}
+
+/* всем элементам кроме последнего */
+/* .site-nav .item:not(:last-child) {
+  margin-right: 50px;
+} */
+
+.site-nav .link.current {
+  color: $accent-color;
+}
+
+/* подчеркивание навигации ----------------- */
+.site-nav .link {
+  position: relative;
+}
+
+.site-nav .link::before {
+  content: "";
+  position: absolute;
+
+  display: block;
+  width: 100%;
+  /* width: 0%; */
+  height: 4px;
+  left: 0;
+  bottom: 0;
+
+  background-color: $accent-color;
+  border-radius: 2px;
+  opacity: 0;
+  /* transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+  /* transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+  transform: scaleX(0);
+  transition: transform 250ms $timimg-function, opacity 250ms $timimg-function;
+}
+
+.site-nav .link:hover::before {
+  opacity: 1;
+  /* width: 100%; */
+  transform: scaleX(1);
+}
+
+.site-nav .link.current::after {
+  content: "";
+  position: absolute;
+
+  display: block;
+  width: 100%;
+
+  height: 4px;
+  left: 0;
+  bottom: 0;
+
+  background-color: $accent-color;
+  border-radius: 2px;
+  opacity: 1;
+
+  transform: scaleX(1);
+  transition: transform 250ms $timimg-function, opacity 250ms $timimg-function;
+}
+/* -------------------------------------------- */
+
+/* строчным элементам не применяется вертикальная геометрия,
+например паддинг, надо его сделать строчно-блочным */
+.site-nav .link {
+  display: inline-block;
+  padding-bottom: 8px;
+
+  color: $secondary-color-text;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  transition: color 250ms $timimg-function, fill 250ms $timimg-function;
+
+  @media screen and (max-width: 767px) {
+    &.current {
+      padding-bottom: 8px;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: block;
+    padding: 32px 0;
+  }
+}
+
+.auth-nav .link {
+  display: block;
+  color: $secondary-color-text;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 250ms $timimg-function, fill 250ms $timimg-function;
+
+  @media screen and (max-width: 767px) {
+    padding: 8px 0 8px 0;
+
+    font-size: 18px;
+    line-height: 1.17;
+  }
+
+  @media screen and (min-width: $tablet) {
+    padding: 7px 0 7px 0;
+
+    font-size: 12px;
+    line-height: 1.17;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 32px 0 32px 0;
+
+    font-size: 14px;
+    line-height: 1.14;
+  }
+}
+
+.site-nav .link:hover,
+.site-nav .link:focus,
+.auth-nav .link:hover,
+.auth-nav .link:focus {
+  color: $accent-color;
+  fill: $accent-color;
+}
+
+.auth-nav .link {
+  display: flex;
+  align-items: center;
+  color: $primary-color-text;
+  fill: $primary-color-text;
+}
+
+.auth-nav {
+  @media screen and (min-width: $tablet) {
+    margin-left: auto;
+  }
+
+  & .item + .item {
+    @media screen and (min-width: $desktop) {
+      margin-left: 30px;
+    }
+  }
+}
+
+/* .auth-nav .item:not(:first-child) {
+  margin-left: 30px;
+} */
+
+// .auth-nav-icon__envelope {
+//   @media screen and (max-width: 767px) {
+//     margin-right: 10px;
+//     width: 16px;
+//     height: 11.2px;
+//   }
+
+//   @media screen and (min-width: $tablet) {
+//     margin-right: 8px;
+//     width: 14px;
+//     height: 10px;
+//   }
+
+//   @media screen and (min-width: $desktop) {
+//     margin-right: 10px;
+//     width: 16px;
+//     height: 11.2px;
+//   }
+// }
+
+// .auth-nav-icon__tel {
+//   @media screen and (max-width: 767px) {
+//     margin-right: 10px;
+//     width: 10px;
+//     height: 14.94px;
+//   }
+
+//   @media screen and (min-width: $tablet) {
+//     margin-right: 8px;
+//     width: 10px;
+//     height: 14px;
+//   }
+
+//   @media screen and (min-width: $desktop) {
+//     margin-right: 10px;
+//     width: 10px;
+//     height: 14.94px;
+//   }
+// }
+
+@media screen and (max-width: 767px) {
+  .auth-nav-icon__envelope {
+    margin-right: 10px;
+    width: 16px;
+    height: 11.2px;
+  }
+
+  .auth-nav-icon__tel {
+    margin-right: 10px;
+    width: 10px;
+    height: 14.94px;
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .auth-nav-icon__envelope {
+    margin-right: 8px;
+    width: 14px;
+    height: 10px;
+  }
+
+  .auth-nav-icon__tel {
+    margin-right: 8px;
+    width: 10px;
+    height: 14px;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .auth-nav-icon__envelope {
+    margin-right: 10px;
+    width: 16px;
+    height: 11.2px;
+  }
+
+  .auth-nav-icon__tel {
+    margin-right: 10px;
+    width: 10px;
+    height: 14.94px;
+  }
+}
+
+/* .auth-nav .email::before {
+  display: inline-flex;
+  content: "";
+
+  width: 16px;
+  height: 11.2px;
+  margin-right: 10px;
+  background-image: url(../images/envelope.svg);
+} */
+
+/* .auth-nav .tel::before {
+  display: inline-flex;
+  content: "";
+
+  width: 10px;
+  height: 14.94px;
+  margin-right: 10px;
+  background-image: url(../images/smartphone.svg);
+  background-position: center;
+} */

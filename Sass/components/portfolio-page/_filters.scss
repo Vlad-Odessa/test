@@ -1,0 +1,50 @@
+.filter {
+  display: flex;
+  // margin-bottom: 30px;
+  flex-wrap: wrap;
+
+  & .item:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 15px;
+
+    & .item {
+      margin-bottom: 15px;
+    }
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: 1199px) {
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+}
+
+.filter .list {
+  padding: 6px 22px;
+
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.63;
+  text-align: center;
+  letter-spacing: 0.03em;
+  background-color: #f5f4fa;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: color 250ms $timimg-function,
+    background-color 250ms $timimg-function;
+
+  &:hover,
+  &:focus {
+    color: $white;
+    background-color: $accent-color;
+  }
+}

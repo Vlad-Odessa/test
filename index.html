@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test-Project</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
+      integrity="sha512-ISS7cAi1PEhQ8jnbJpJZMd29NlhNj4AWYyLOSp2CE/CsHxTCu+r+t0D2yoJudVrd0/8fTVPUVDzY5Tvli75u/g=="
+      crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" href="./css/styles.css" /> -->
+    <link rel="stylesheet" href="./css/main.min.css" />
+  </head>
+  <body>
+    <!-- шапка -->
+    <header>
+      <div class="main container border">
+        <a href="./index.html" lang="en" class="logo">
+          <span class="logo-style">Web</span> Studio</a
+        >
+
+        <!-- кнопки мобильного меню -->
+        <!-- для доступности aria-expamded, оно говорит, раскрыто ли меню,
+            которое связано с этим элементом -->
+        <button
+          type="button"
+          class="menu-button is-open"
+          aria-expamded="false"
+          aria-controls="mobile-menu"
+          data-menu-button
+        >
+          <svg
+            width="50"
+            height="50"
+            aria-label="Переключатель мобильного меню"
+          >
+            <use
+              class="menu-button_open"
+              href="./images/sprite.svg#icon-open_mobile"
+            ></use>
+            <use
+              class="menu-button_close"
+              href="./images/sprite.svg#icon-close_mobile"
+            ></use>
+          </svg>
+        </button>
+
+        <div class="mobile-menu" id="mobile-menu" data-menu>
+          <nav>
+            <ul class="site-nav">
+              <li class="item">
+                <a href="" class="link current">Студия</a>
+              </li>
+
+              <li class="item">
+                <a href="./portfolio.html" class="link">Портфолио</a>
+              </li>
+
+              <li class="item">
+                <a href="" class="link">Контакты</a>
+              </li>
+            </ul>
+          </nav>
+
+          <ul class="auth-nav">
+            <li class="item">
+              <a href="mailto:info@devstudio.com" class="link">
+                <svg class="auth-nav-icon__envelope">
+                  <use href="./images/sprite.svg#icon-envelope"></use>
+                </svg>
+                info@devstudio.com
+              </a>
+            </li>
+
+            <li class="item">
+              <a href="tel:+380961111111" class="link">
+                <svg class="auth-nav-icon__tel">
+                  <use href="./images/sprite.svg#icon-tel"></use>
+                </svg>
+                +38 096 111 11 11
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- герой -->
+      <section class="hero">
+        <h1 class="hero-title">
+          Эффективные решения <br />
+          для вашего бизнеса
+        </h1>
+        <button type="button" class="btn btn-primery" data-open-modal>
+          Заказать услугу
+        </button>
+      </section>
+
+      <!-- наши особенности -->
+      <section class="section-feature">
+        <div class="container border">
+          <!-- h2 надо скрыть -->
+          <h2 class="section-title visually-hidden">Наши особенности</h2>
+          <ul class="feature-list">
+            <li class="item">
+              <!-- <img src="./images/antenna.svg" alt="фото антены" width="70" /> -->
+              <div class="feature-bg">
+                <svg width="70" height="70">
+                  <use href="./images/sprite.svg#icon-antenna"></use>
+                </svg>
+              </div>
+              <h3 class="title">Внимание к деталям</h3>
+              <p class="text">
+                Идейные соображения, а также начало повседневной работы по
+                формированию позиции.
+              </p>
+            </li>
+
+            <li class="item">
+              <!-- <img src="./images/astronaut.svg" alt="фото космонафта" width="70" /> -->
+              <div class="feature-bg">
+                <svg width="70" height="70">
+                  <use href="./images/sprite.svg#icon-clock"></use>
+                </svg>
+              </div>
+              <h3 class="title">Пунктуальность</h3>
+              <p class="text">
+                Задача организации, в особенности же рамки и место обучения
+                кадров влечет за собой.
+              </p>
+            </li>
+
+            <li class="item">
+              <!-- <img src="./images/clock.svg" alt="фото часы" width="70" /> -->
+              <div class="feature-bg">
+                <svg width="70" height="70">
+                  <use href="./images/sprite.svg#icon-diagram"></use>
+                </svg>
+              </div>
+              <h3 class="title">Планирование</h3>
+              <p class="text">
+                Равным образом консультация с широким активом в значительной
+                степени обуславливает.
+              </p>
+            </li>
+
+            <li class="item">
+              <!-- <img src="./images/diagram.svg" alt="фото диаграммы" width="70" /> -->
+              <div class="feature-bg">
+                <svg width="70" height="70">
+                  <use href="./images/sprite.svg#icon-astronaut"></use>
+                </svg>
+              </div>
+              <h3 class="title">Современные технологии</h3>
+              <p class="text">
+                Значимость этих проблем настолько очевидна, что реализация
+                плановых заданий.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Чем мы занимаемся -->
+      <section class="section-occupation">
+        <div class="container border">
+          <h2 class="section-title">Чем мы занимаемся</h2>
+          <ul class="occupation-list">
+            <li class="item">
+              <picture>
+                <source
+                  srcset="
+                    ./images/foto-notebook_370.webp  1x,
+                    ./images/foto-notebook_740.webp  2x,
+                    ./images/foto-notebook_1110.webp 3x
+                  "
+                  type="image/webp"
+                />
+
+                <img
+                  class="gap-images"
+                  srcset="
+                    ./images/foto-notebook_370.jpg  1x,
+                    ./images/foto-notebook_740.jpg  2x,
+                    ./images/foto-notebook_1110.jpg 3x
+                  "
+                  src="./images/foto-notebook_370.jpg"
+                  alt="фото ноутбука"
+                  width="370"
+                  loading="lazy"
+                />
+              </picture>
+
+              <p class="title">Десктопные приложения</p>
+            </li>
+
+            <li class="item">
+              <picture>
+                <source
+                  srcset="
+                    ./images/foto-phone_370.webp  1x,
+                    ./images/foto-phone_740.webp  2x,
+                    ./images/foto-phone_1110.webp 3x
+                  "
+                  type="image/webp"
+                />
+
+                <img
+                  class="gap-images"
+                  srcset="
+                    ./images/foto-phone_370.jpg  1x,
+                    ./images/foto-phone_740.jpg  2x,
+                    ./images/foto-phone_1110.jpg 3x
+                  "
+                  src="./images/foto-notebook_370.jpg"
+                  alt="фото мобильного телефона"
+                  width="370"
+                  loading="lazy"
+                />
+              </picture>
+
+              <p class="title">Мобильные приложения</p>
+            </li>
+
+            <li class="item">
+              <picture>
+                <source
+                  srcset="
+                    ./images/foto-monitor_370.webp  1x,
+                    ./images/foto-monitor_740.webp  2x,
+                    ./images/foto-monitor_1110.webp 3x
+                  "
+                  type="image/webp"
+                />
+
+                <img
+                  class="gap-images"
+                  srcset="
+                    ./images/foto-monitor_370.jpg  1x,
+                    ./images/foto-monitor_740.jpg  2x,
+                    ./images/foto-monitor_1110.jpg 3x
+                  "
+                  src="./images/foto-notebook_370.jpg"
+                  alt="фото монитора"
+                  width="370"
+                  loading="lazy"
+                />
+              </picture>
+
+              <p class="title">Дизайнерские решения</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Наша команда -->
+      <section class="section-command">
+        <div class="container border">
+          <h2 class="section-title subtitle">Наша команда</h2>
+          <ul class="command-list">
+            <li class="item">
+              <div class="card">
+                <div class="front">
+                  <!-- picture - позволяет загружать энное кол изображений с разными форматами,
+                  другими словами это контейнер для набора source с разными картинками 
+                  и он не силизируется-->
+                  <picture>
+                    <!-- source - нужен для браузера, чтобы тот мог выбрать какого формата картинку грузить
+                    на сайт, если браузер не занет расширение webp, то он начнет грузить jpg -->
+                    <source
+                      srcset="
+                        ./images/foto_team/team-1_450.webp  1x,
+                        ./images/foto_team/team-1_900.webp  2x,
+                        ./images/foto_team/team-1_1350.webp 3x
+                      "
+                      type="image/webp"
+                    />
+
+                    <img
+                      class="command-foto gap-images"
+                      srcset="
+                        ./images/foto_team/team-1_450.jpg  1x,
+                        ./images/foto_team/team-1_900.jpg  2x,
+                        ./images/foto_team/team-1_1350.jpg 3x
+                      "
+                      src="./images/foto_team/team-1_450.jpg"
+                      alt="фото Николая Кучеренко"
+                      width="450"
+                      loading="lazy"
+                    />
+                    <!-- loading="lazy" - ленивая загрузка -->
+                  </picture>
+                </div>
+                <!-- <div class="back"><span>Выравнить текс по центру</span></div> -->
+              </div>
+              <h2 class="name">Николай Кучеренко</h2>
+              <p lang="en" class="position">Product Designer</p>
+              <ul class="social-network">
+                <li class="social-network-item">
+                  <!-- <a href="" class="link" aria-label="instagram">ins</a> -->
+                  <a href="" class="link">
+                    <!-- резервируется место под иконки при загрузке страницы -->
+                    <svg width="20" height="20">
+                      <use href="./images/sprite.svg#icon-instagram"></use>
+                    </svg>
+                  </a>
+                </li>
+
+                <li class="social-network-item">
+                  <!-- <a href="" class="link" aria-label="twitter">twi</a> -->
+                  <a href="" class="link">
+                    <svg width="20" height="20">
+                      <use href="./images/sprite.svg#icon-twitter"></use>
+                    </svg>
+                  </a>
+                </li>
+
+                <li class="social-network-item">
+                  <!-- <a href="" class="link" aria-label="facebook">fac</a> -->
+                  <a href="" class="link">
+                    <svg width="20" height="20">
+                      <use href="./images/sprite.svg#icon-facebook"></use>
+                    </svg>
+                  </a>
+                </li>
+
+                <li class="social-network-item">
+                  <!-- <a href="" class="link" aria-label="linkedin">lin</a> -->
+                  <a href="" class="link">
+                    <svg width="20" height="20">
+                      <use href="./images/sprite.svg#icon-linkedin"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="item">
+              <picture>
+                <source
+                  srcset="
+                    ./images/foto_team/team-2_450.webp  1x,
+                    ./images/foto_team/team-2_900.webp  2x,
+                    ./images/foto_team/team-2_1350.webp 3x
+                  "
+                  type="image/webp"
+                />
+
+                <img
+                  class="command-foto gap-images"
+                  srcset="
+                    ./images/foto_team/team-2_450.jpg  1x,
+                    ./images/foto_team/team-2_900.jpg  2x,
+                    ./images/foto_team/team-2_1350.jpg 3x
+                  "
+                  src="./images/foto_team/team-2_450.jpg"
+                  alt="фото Николая Кучеренко"
+                  width="450"
+                  loading="lazy"
+                />
+              </picture>
+              <h2 class="name">Ольга Иванова</h2>
+              <p lang="en" class="position">Frontend Developer</p>
+              <ul class="social-network">
+                <li class="social-network-item">
+                  <!-- <a href="" class="link" aria-label="instagram">ins</a> -->
+                  <a href="" class="link">
+                    <!-- резервируется место под иконки при загрузке страницы -->
+                    <svg width="20" height="20">
+                      <use href="./images/sprite.svg#icon-instagram"></use>
+                    </svg>
+                  </a>
+                </li>
+
+                <li class="social-network-item">
+                  <!-- <a href="" class="link" aria-label="twitter">twi</a> -->
+                  <a href="" class="link">
+                    <svg width="20" height="20">
+                      <use href="./images/sprite.svg#icon-twitter"></use>
+                    </svg>
+                  </a>
+                </li>
+
+                <li class="social-network-item">
+                  <!-- <a href="" class="link" aria-label="facebook">fac</a> -->
+                  <a href="" class="link">
+                    <svg width="20" height="20">
+                      <use href="./images/sprite.svg#icon-facebook"></use>
+                    </svg>
+                  </a>
+                </li>
+
+                <li class="social-network-item">
+                  <!-- <a href="" class="link" aria-label="linkedin">lin</a> -->
+                  <a href="" class="link">
+                    <svg width="20" height="20">
+                      <use href="./images/sprite.svg#icon-linkedin"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="item">
+              <picture>
+                <source
+                  srcset="
+                    ./images/foto_team/team-3_450.webp  1x,
+                    ./images/foto_team/team-3_900.webp  2x,
+                    ./images/foto_team/team-3_1350.webp 3x
+                  "
+                  type="image/webp"
+                />
+
+                <img
+                  class="command-foto gap-images"
+                  srcset="
+                    ./images/foto_team/team-3_450.jpg  1x,
+                    ./images/foto_team/team-3_900.jpg  2x,
+                    ./images/foto_team/team-3_1350.jpg 3x
+                  "
+                  src="./images/foto_team/team-3_450.jpg"
+                  alt="фото Николая Кучеренко"
+                  width="450"
+                  loading="lazy"
+                />
+              </picture>
+              <h2 class="name">Андрей Шевченко</h2>
+              <p lang="en" class="position">Marketing</p>
+              <ul class="social-network">
+                <li class="social-network-item">
+                  <!-- <a href="" class="link" aria-label="instagram">ins</a> -->
+                  <a href="" class="link">
+                    <!-- резервируется место под иконки при загрузке страницы -->
+                    <svg width="20" height="20">
+                      <use href="./images/sprite.svg#icon-instagram"></use>
+                    </svg>
+                  </a>
+                </li>
+
+                <li class="social-network-item">
+                  <!-- <a href="" class="link" aria-label="twitter">twi</a> -->
+                  <a href="" class="link">
+                    <svg width="20" height="20">
+                      <use href="./images/sprite.svg#icon-twitter"></use>
+                    </svg>
+                  </a>
+                </li>
+
+                <li class="social-network-item">
+                  <!-- <a href="" class="link" aria-label="facebook">fac</a> -->
+                  <a href="" class="link">
+                    <svg width="20" height="20">
+                      <use href="./images/sprite.svg#icon-facebook"></use>
+                    </svg>
+                  </a>
+                </li>
+
+                <li class="social-network-item">
+                  <!-- <a href="" class="link" aria-label="linkedin">lin</a> -->
+                  <a href="" class="link">
+                    <svg width="20" height="20">
+                      <use href="./images/sprite.svg#icon-linkedin"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="item">
+              <picture>
+                <source
+                  srcset="
+                    ./images/foto_team/team-4_450.webp  1x,
+                    ./images/foto_team/team-4_900.webp  2x,
+                    ./images/foto_team/team-4_1350.webp 3x
+                  "
+                  type="image/webp"
+                />
+
+                <img
+                  class="command-foto gap-images"
+                  srcset="
+                    ./images/foto_team/team-4_450.jpg  1x,
+                    ./images/foto_team/team-4_900.jpg  2x,
+                    ./images/foto_team/team-4_1350.jpg 3x
+                  "
+                  src="./images/foto_team/team-4_450.jpg"
+                  alt="фото Николая Кучеренко"
+                  width="450"
+                  loading="lazy"
+                />
+              </picture>
+              <h2 class="name">Иван Николаев</h2>
+              <p lang="en" class="position">UI Designer</p>
+              <ul class="social-network">
+                <li class="social-network-item">
+                  <!-- <a href="" class="link" aria-label="instagram">ins</a> -->
+                  <a href="" class="link">
+                    <!-- резервируется место под иконки при загрузке страницы -->
+                    <svg width="20" height="20">
+                      <use href="./images/sprite.svg#icon-instagram"></use>
+                    </svg>
+                  </a>
+                </li>
+
+                <li class="social-network-item">
+                  <!-- <a href="" class="link" aria-label="twitter">twi</a> -->
+                  <a href="" class="link">
+                    <svg width="20" height="20">
+                      <use href="./images/sprite.svg#icon-twitter"></use>
+                    </svg>
+                  </a>
+                </li>
+
+                <li class="social-network-item">
+                  <!-- <a href="" class="link" aria-label="facebook">fac</a> -->
+                  <a href="" class="link">
+                    <svg width="20" height="20">
+                      <use href="./images/sprite.svg#icon-facebook"></use>
+                    </svg>
+                  </a>
+                </li>
+
+                <li class="social-network-item">
+                  <!-- <a href="" class="link" aria-label="linkedin">lin</a> -->
+                  <a href="" class="link">
+                    <svg width="20" height="20">
+                      <use href="./images/sprite.svg#icon-linkedin"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Постоянные клиенты -->
+      <section class="section-clients">
+        <div class="container border">
+          <h2 class="section-title">Постоянные клиенты</h2>
+          <ul class="clients">
+            <li class="item">
+              <a href="" class="link">
+                <!-- <img src="./images/logo 1.svg" alt="логотип компании" /> -->
+                <svg width="44.27" height="49.23">
+                  <use href="./images/sprite.svg#icon-logo1"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="item">
+              <a href="" class="link">
+                <!-- <img src="./images/logo 2.svg" alt="логотип компании" /> -->
+                <svg width="40" height="52">
+                  <use href="./images/sprite.svg#icon-logo2"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="item">
+              <a href="" class="link">
+                <!-- <img src="./images/logo 3.svg" alt="логотип компании" /> -->
+                <svg width="41" height="42.6">
+                  <use href="./images/sprite.svg#icon-logo3"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="item">
+              <a href="" class="link">
+                <!-- <img src="./images/logo 4.svg" alt="логотип компании" /> -->
+                <svg width="79.66" height="42.02">
+                  <use href="./images/sprite.svg#icon-logo4"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="item">
+              <a href="" class="link">
+                <!-- <img src="./images/logo 5.svg" alt="логотип компании" /> -->
+                <svg width="59" height="47">
+                  <use href="./images/sprite.svg#icon-logo5"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="item">
+              <a href="" class="link">
+                <!-- <img src="./images/logo 6.svg" alt="логотип компании" /> -->
+                <svg width="88.48" height="45.44">
+                  <use href="./images/sprite.svg#icon-logo6"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- модальное окно -->
+      <div class="backdrop is-hidden" data-backdrop>
+        <div class="modal">
+          <form class="js-speaker-form" autocomplete="off">
+            <!-- помогает браузеру предоставить пользователю выбрать текст, который он вводил ранее -->
+            <!-- можно включить на всю форму или выключить точечно -->
+            <!-- можно сделать списком или лейбел и инпут обернкть в тег р -->
+            <b class="modal-title">Оставьте свои данные, мы вам перезвоним</b>
+            <!-- <ul class="form-group">
+              <li class="form-item"> -->
+            <!-- для того чтобы метка "Имя" выезжвло на верх, 
+                надо label и input поменять местами - input потом label -->
+            <!-- <label for="name" class="form-label">Имя</label>
+                <input
+                  class="form-input"
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Иван Иваныч"
+                  autofocus
+                /> -->
+            <!-- autofocus только один во всей форме, нужен длято того, чтобы курсив уже
+                находился в нужной строке -->
+            <!-- надо добавить после id="name" - data-placeholder="Иван Иванович - это JS" и включить js -->
+            <!-- <input
+                  class="form-input"
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder=" "
+                />
+                <label for="name" class="form-label">Имя</label>
+                <svg class="modal-icon" width="18" height="18">
+                  <use href="./images/sprite2.svg#icon-person"></use>
+                </svg>
+              </li> -->
+
+            <!-- надо все переделать и избавиться от id -->
+            <!-- <li class="form-item"> -->
+            <!-- в type указывается какой тип клавиатуры будет появлятся если вводить данные с телефона -->
+            <!-- <input
+                  class="form-input"
+                  type="tel"
+                  name="tel"
+                  id="tel"
+                  placeholder=" "
+                />
+                <label for="tel" class="form-label">Телефон</label>
+                <svg class="modal-icon" width="18" height="18">
+                  <use href="./images/sprite2.svg#icon-phone"></use>
+                </svg>
+              </li> -->
+
+            <!-- <li class="form-item">
+                <input
+                  class="form-input"
+                  type="mail"
+                  name="mail"
+                  id="mail"
+                  placeholder=" "
+                />
+                <label for="mail" class="form-label">Почта</label>
+                <svg class="modal-icon" width="18" height="18">
+                  <use href="./images/sprite2.svg#icon-email"></use>
+                </svg>
+              </li> -->
+
+            <!-- <li class="form-textarea">
+                <textarea
+                  name="comment"
+                  id="comment"
+                  rows="10"
+                  placeholder=" "
+                ></textarea>
+                <label for="comment">Комментарий</label>
+              </li> -->
+
+            <!-- <li class="style-checkbox">
+                <label class="checkbox-label">
+                  <input
+                    class="checkbox"
+                    type="checkbox"
+                    name="policy"
+                    value="надо указать значение!!!"
+                  />
+                  <span class="checkbox-icon"></span>
+                  Соглашаюсь с рассылкой и принимаю
+                  <span class="">Условия договора</span>
+                </label>
+              </li>
+            </ul> -->
+
+            <label class="form-field">
+              <input
+                class="form-input"
+                type="name"
+                name="name"
+                placeholder=" "
+              />
+              <span class="form-label">Имя</span>
+              <svg class="form-icon" width="18" height="18">
+                <use href="./images/sprite2.svg#icon-person"></use>
+              </svg>
+            </label>
+
+            <label class="form-field">
+              <input class="form-input" type="tel" name="tel" placeholder=" " />
+              <span class="form-label">Телефон</span>
+              <svg class="form-icon" width="18" height="18">
+                <use href="./images/sprite2.svg#icon-phone"></use>
+              </svg>
+            </label>
+
+            <label class="form-field">
+              <input
+                class="form-input"
+                type="mail"
+                name="mail"
+                placeholder=" "
+              />
+              <span class="form-label">Почта</span>
+              <svg class="form-icon" width="18" height="18">
+                <use href="./images/sprite2.svg#icon-email"></use>
+              </svg>
+            </label>
+
+            <label class="form-field form-type">
+              <textarea
+                class="form-type"
+                name="comment"
+                rows="6"
+                placeholder=" "
+              ></textarea>
+              <span class="form-label-textarea">Комментарий</span>
+            </label>
+
+            <label class="style-checkbox">
+              <input
+                class="checkbox"
+                type="checkbox"
+                name="policy"
+                value="надо указать значение!!!"
+              />
+              <span class="checkbox-icon"></span>
+              Соглашаюсь с рассылкой и принимаю&nbsp;
+              <a href="" class="checkbox-policy"> Условия договора</a>
+            </label>
+
+            <!-- type="submit" для отправки формы если кнопка именно submit -->
+            <button class="btn btn-send" type="submit">Отправить</button>
+
+            <button class="btn-modal-close" data-close-modal>
+              <svg class="btn-modal-close-icon" width="18" height="18">
+                <use href="./images/sprite2.svg#icon-close"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer-color">
+      <!-- <div class="container border"> -->
+      <div class="container footer-wrap border">
+        <div class="footer-adress">
+          <a href="./index.html" lang="en" class="logo footer-logo">
+            <span class="logo-style">Web</span> &nbsp;Studio</a
+          >
+          <adress>
+            <ul class="footer-adress-list">
+              <li class="footer-adress-item">
+                г. Киев, пр-т Леси Украинки, 26
+              </li>
+
+              <li class="footer-adress-item">
+                <a href="" class="footer-adress-link">info@example.com</a>
+              </li>
+
+              <li class="footer-adress-item">
+                <a href="" class="footer-adress-link">+38 099 111 11 11</a>
+              </li>
+            </ul>
+          </adress>
+        </div>
+
+        <div class="footer-socials">
+          <b class="invitation">Присоединяйтесь</b>
+          <ul class="socials-list">
+            <li class="item">
+              <!-- <a href="" aria-label="instagram">instagram</a> -->
+              <a href="" class="link">
+                <!-- резервируется место под иконки при загрузке страницы -->
+                <svg class="socials-list-icon" width="20" height="20">
+                  <use href="./images/sprite.svg#icon-instagram"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="item">
+              <!-- <a href="" aria-label="twitter">twitter</a> -->
+              <a href="" class="link">
+                <svg class="socials-list-icon" width="20" height="20">
+                  <use href="./images/sprite.svg#icon-twitter"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="item">
+              <!-- <a href="" aria-label="facebook">facebook</a> -->
+              <a href="" class="link">
+                <svg class="socials-list-icon" width="20" height="20">
+                  <use href="./images/sprite.svg#icon-facebook"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="item">
+              <!-- <a href="" aria-label="linkedin">linkedin</a> -->
+              <a href="" class="link">
+                <svg class="socials-list-icon" width="20" height="20">
+                  <use href="./images/sprite.svg#icon-linkedin"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-subscription">
+          <b class="invitation">Подпишитесь на рассылку</b>
+          <form class="form-footer" autocomplete="off">
+            <label class="footer-subscription-label">
+              <input
+                class="footer-subscription-input"
+                type="mail"
+                name="mail"
+                placeholder="E-mail"
+              />
+            </label>
+
+            <!-- обернул в див, чтобы выровнять по центру -->
+            <div class="footer-btn">
+              <button type="button" class="btn secondary">
+                <svg class="icon-send-new" width="24" height="24">
+                  <use href="./images/sprite.svg#icon-send"></use>
+                </svg>
+                Подписаться
+                <svg class="icon-send" width="24" height="24">
+                  <use href="./images/sprite.svg#icon-send"></use>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- </div> -->
+    </footer>
+
+    <!-- js для того чтобы при клике убрать класс is-hidden 
+      и потом его обратно вернуть -->
+    <!-- <script>
+        const refs = {
+          openModalBtn: document.querySelector("[data-open-modal]"),
+          closeModalBtn: document.querySelector("[data-close-modal]"),
+          backdrop: document.querySelector("[data-backdrop]"),
+        };
+
+        refs.openModalBtn.addEventListener("click", toggleModal);
+        refs.closeModalBtn.addEventListener("click", toggleModal);
+
+        refs.backdrop.addEventListener("click", logBackdropClick);
+
+        function toggleModal() {
+          refs.backdrop.classList.toggle("is-hidden");
+        }
+
+        function logBackdropClick() {
+          console.log("Это клик в бекдроп");
+        }
+      </script> -->
+    <script src="./js/modal.js"></script>
+    <script src="./js/mobile-menu.js"></script>
+
+    <!-- Скрипт для просмотра данных отправки в "console":  -->
+    <script>
+      (() => {
+        document
+          .querySelector(".js-speaker-form")
+          .addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`)
+            );
+          });
+      })();
+
+      // скрипт для плайсхолдера
+      // document.querySelector(".form-input").addEventListener("focusin", (e) => {
+      //   e.currentTarget.placeholder = e.currentTarget.dataset.placeholder;
+      // });
+
+      // document
+      //   .querySelector(".form-input")
+      //   .addEventListener("focusout", (e) => {
+      //     e.currentTarget.placeholder = " ";
+      //   });
+    </script>
+  </body>
+</html>

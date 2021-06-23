@@ -1,0 +1,216 @@
+.hero {
+  /* если задать max-width то фото будет ограничено по нирине
+   и на больших экранах, будет справа и слева фото белые пробелы */
+  // max-width: 1600px;
+  /* height: 600px; */
+  /* если выключить max-width, то фото будет тянуться до бесконечгости */
+
+  padding: 118px 0;
+  margin: 0 auto;
+
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.8),
+      rgba(47, 48, 58, 0.8)
+    ),
+    url("../images/hero/hero-1_480.jpg");
+
+  /* когда фото меньше нужной ширины и выше нужной высоты */
+  /* также, когда фото нужно растянуть по ширине на весь экран, 
+даже на очень большой */
+  /* когда надо, чтобы фото рянулась до бесконечности */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  text-align: center;
+
+  @media screen and (min-width: $desktop) {
+    padding: 120px 0;
+  }
+
+  /* анимация бекграунда ================================ */
+  // background-image: linear-gradient(
+  //     45deg,
+  //     rgba(189, 195, 199, 0.8),
+  //     rgba(47, 48, 58, 0.8)
+  //   ),
+  //   url("../images/hero.jpg");
+  /* background-size: 400% 400%; */
+  // animation: gradient 10s ease infinite;
+}
+
+// @keyframes gradient {
+//   0% {
+//     background-position: 0 50%;
+//   }
+//   50% {
+//     background-position: 100% 50%;
+//   }
+//   100% {
+//     background-position: 0 50%;
+//   }
+// }
+/* =============================================== */
+
+@media screen and (min-device-pixel-ratio: 2),
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.8),
+        rgba(47, 48, 58, 0.8)
+      ),
+      url("/images/hero/hero-1_960.jpg");
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 3),
+  screen and (min-resolution: 288dpi),
+  screen and (min-resolution: 3dppx) {
+  .hero {
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.8),
+        rgba(47, 48, 58, 0.8)
+      ),
+      url("/images/hero/hero-1_1440.jpg");
+  }
+}
+
+// ===========================================
+@media screen and (min-width: 481px) and (max-width: $tablet) {
+  .hero {
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.8),
+        rgba(47, 48, 58, 0.8)
+      ),
+      url("/images/hero/hero-2_768.jpg");
+  }
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    .hero {
+      background-image: linear-gradient(
+          to right,
+          rgba(47, 48, 58, 0.8),
+          rgba(47, 48, 58, 0.8)
+        ),
+        url("/images/hero/hero-2_1536.jpg");
+    }
+  }
+
+  @media screen and (min-device-pixel-ratio: 3),
+    screen and (min-resolution: 288dpi),
+    screen and (min-resolution: 3dppx) {
+    .hero {
+      background-image: linear-gradient(
+          to right,
+          rgba(47, 48, 58, 0.8),
+          rgba(47, 48, 58, 0.8)
+        ),
+        url("/images/hero/hero-2_2304.jpg");
+    }
+  }
+}
+// ==============================================
+
+@media screen and (min-width: 769px) {
+  .hero {
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.8),
+        rgba(47, 48, 58, 0.8)
+      ),
+      url("/images/hero/hero-3_1600.jpg");
+  }
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    .hero {
+      background-image: linear-gradient(
+          to right,
+          rgba(47, 48, 58, 0.8),
+          rgba(47, 48, 58, 0.8)
+        ),
+        url("/images/hero/hero-3_3200.jpg");
+    }
+  }
+
+  @media screen and (min-device-pixel-ratio: 3),
+    screen and (min-resolution: 288dpi),
+    screen and (min-resolution: 3dppx) {
+    .hero {
+      background-image: linear-gradient(
+          to right,
+          rgba(47, 48, 58, 0.8),
+          rgba(47, 48, 58, 0.8)
+        ),
+        url("/images/hero/hero-3_4800.jpg");
+    }
+  }
+}
+
+
+.hero-title {
+  margin-top: 0;
+  margin-bottom: 30px;
+
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 1.61;
+  color: $white;
+  /* text-align: center; */
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  @media screen and (min-width: $desktop) {
+    font-size: 44px;
+    line-height: 1.36;
+  }
+}
+
+/* конопка героя ==================================*/
+.btn-primery {
+  position: relative;
+  padding: 10px 32px;
+  overflow: hidden;
+
+  /* min-width: 200px; */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  border: 1px solid $white;
+  background-color: transparent;
+  transition: color 500ms $timimg-function;
+
+  z-index: 1;
+}
+
+/* почему не работает обратная анимация
+ на цвете текста ?????????? */
+
+.btn-primery::before {
+  content: "";
+  position: absolute;
+
+  width: 240px;
+  height: 60px;
+  left: -10%;
+  top: 0;
+
+  background-color: $white;
+  transform: translateY(120%) rotate(-7deg);
+  transition: transform 500ms $timimg-function;
+}
+
+.btn-primery:hover {
+  color: $secondary-color-text;
+}
+
+.btn-primery:hover::before {
+  transform: translateY(0);
+  z-index: -1;
+}

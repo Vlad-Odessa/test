@@ -1,0 +1,46 @@
+.section-occupation {
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
+
+  padding-bottom: 94px;
+}
+
+.occupation-list .title {
+  margin: 0;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.occupation-list {
+  display: flex;
+
+  & .item {
+    position: relative;
+  }
+
+  & .title {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    padding: 27px 0;
+    /* margin: 0 auto; */
+    color: $white;
+    text-align: center;
+    background-color: rgba(47, 48, 58, 0.8);
+  }
+
+  & .item + .item {
+    margin-left: 30px;
+  }
+}
+
+/* убрал зазор в 4рх */
+/* .gap-images {
+  display: block;
+} */

@@ -1,0 +1,48 @@
+// normalaze???
+
+// переменные: цвета, шришты,
+@import "./utils/variables";
+
+// миксины надо подключать отдельным файлом в самом верху
+
+// базовые стили
+@import "./utils/base";
+
+// шаблоны
+@import "./utils/placeholders";
+
+// логотип
+@import "./main/logo";
+
+// конпка-меню на мобилке
+@import "./main/menu-button";
+
+// шапка
+@import "./main/header";
+
+// герой
+@import "./components/index-page/hero";
+
+// модальное окно
+@import "./components/index-page/modal";
+
+// наши особенности
+@import "./components/index-page/feature";
+
+// чем мы занимаемся
+@import "./components/index-page/occupation";
+
+// наша команда
+@import "./components/index-page/team";
+
+// наши клиенты
+@import "./components/index-page/clients";
+
+// портфолио - фильтр
+@import "./components/portfolio-page/filters";
+
+// портфолио - примры работ
+@import "./components/portfolio-page/work_examples";
+
+// футер
+@import "./main/footer";
