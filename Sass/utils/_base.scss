@@ -73,14 +73,14 @@ textarea {
   overflow: hidden;
 }
 
-.border {
-  outline: 1px solid tomato;
-}
+// .border {
+//   outline: 1px solid tomato;
+// }
 
 .container {
   // отключил width для адаптивности
   // width: 1200px;
-  padding: 0 15px 0 15px;
+  padding: 0 15px;
   margin: 0 auto;
 
   @media screen and (min-width: $mobile) {
